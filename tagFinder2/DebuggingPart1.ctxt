@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=DebuggingPart1
+comment0.text=import\ edu.duke.*;\r\nimport\ java.io.*;\r\n\r\npublic\ class\ TagFinder\ {\r\n\tpublic\ String\ findProtein(String\ dna)\ {\r\n\t\tint\ start\ \=\ dna.indexOf("atg");\r\n\t\tif\ (start\ \=\=\ -1)\ {\r\n\t\t\treturn\ "";\r\n\t\t}\r\n\t\tint\ stop\ \=\ dna.indexOf("tag",\ start+3);\r\n\t\tif\ ((stop\ -\ start)\ %\ 3\ \=\=\ 0)\ {\r\n\t\t\treturn\ dna.substring(start,\ stop+3);\r\n\t\t}\r\n\t\telse\ {\r\n\t\t\treturn\ "";\r\n\t\t}\r\n\t}\r\n\t\r\n\t//public\ void\ testing()\ {\r\n\t\t//String\ a\ \=\ "cccatggggtttaaataataataggagagagagagagagttt";\r\n\t\tString\ ap\ \=\ "atggggtttaaataataatag";\r\n\t\t//String\ a\ \=\ "atgcctag";\r\n\t\t//String\ ap\ \=\ "";\r\n\t\t//String\ a\ \=\ "ATGCCCTAG";\r\n\t\t//String\ ap\ \=\ "ATGCCCTAG";\r\n\t\tString\ result\ \=\ findProtein(a);\r\n\t\tif\ (ap.equals(result))\ {\r\n\t\t\tSystem.out.println("success\ for\ "\ +\ ap\ +\ "\ length\ "\ +\ ap.length());\r\n\t\t}\r\n\t\telse\ {\r\n\t\t\tSystem.out.println("mistake\ for\ input\:\ "\ +\ a);\r\n\t\t\tSystem.out.println("got\:\ "\ +\ result);\r\n\t\t\tSystem.out.println("not\:\ "\ +\ ap);\r\n\t\t}\r\n\t}\r\n\r\n\tpublic\ void\ realTesting()\ {\r\n\t\tDirectoryResource\ dr\ \=\ new\ DirectoryResource();\r\n\t\tfor\ (File\ f\ \:\ dr.selectedFiles())\ {\r\n\t\t\tFileResource\ fr\ \=\ new\ FileResource(f);\r\n\t\t\tString\ s\ \=\ fr.asString();\r\n\t\t\tSystem.out.println("read\ "\ +\ s.length()\ +\ "\ characters");\r\n\t\t\tString\ result\ \=\ findProtein(s);\r\n\t\t\tSystem.out.println("found\ "\ +\ result);\r\n\t\t}\r\n\t}\r\n}\r\n
+comment1.params=input
+comment1.target=void\ findAbc(java.lang.String)
+comment2.params=
+comment2.target=void\ test()
+numComments=3
